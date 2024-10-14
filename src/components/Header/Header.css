@@ -1,0 +1,76 @@
+.header-container {
+  width: 100%;
+}
+
+.header-nav {
+  margin-top: 60px;
+  margin-left: 355px;
+}
+
+a {
+  text-decoration: none;
+  color: #2a6b93;
+}
+
+.sheetName {
+  margin-left: 70px;
+  font-weight: 700;
+  font-size: 24px;
+  position: relative;
+  top: -35px;
+}
+
+.nav-list {
+  display: inline-block;
+  margin-left: 29px;
+  font-size: 16px;
+  font-weight: 400;
+  position: relative;
+  top: -30px;
+}
+
+.nav-list p {
+  display: inline-block;
+  color: grey;
+  margin-left: 5px;
+}
+
+form {
+  display: inline-block;
+  float: right;
+  margin-right: 600px;
+  position: relative;
+  top: -70px;
+}
+
+input {
+  border: none;
+  background-color: #dddddc;
+  /* background-color: black; */
+  opacity: 50%;
+  width: 245px;
+  padding: 6px 10px;
+  border-radius: 10px;
+}
+
+button {
+  background-color: #296a92;
+  border: none;
+  border-radius: 10px;
+  padding: 0px 10px;
+  height: 25px;
+  width: 40px;
+  position: relative;
+  right: 40px;
+  top: 2px;
+}
+
+@media screen and (max-width: 1440px) {
+  .header-nav {
+    margin-left: 100px;
+  }
+
+  form {
+    margin-right: 100px;
+  }
+}
