@@ -1,6 +1,32 @@
 .sidebar-container {
-  float: left;
-  height: 90vh;
-  background-color: #125a86;
+  position: absolute;
+  left: 0;
   width: 60px;
 }
+
+.sidebar-wrapper{
+  height: 100vh;
+  background-color: #125a86;
+}
+
+.toHome{
+  margin-left: 45px;
+}
+
+/* @media screen and (max-width: 2560px){
+  .sidebar-container{
+    height: 110vh;
+  }
+}
+
+@media screen and (max-width: 1440px){
+  .sidebar-container{
+    height: 190vh;
+  }
+}
+
+@media screen and (max-width: 1024px){
+  .sidebar-container{
+    height: 190vh;
+  }
+} */

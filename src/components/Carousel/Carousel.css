@@ -84,3 +84,16 @@
 .item4 button {
   margin-top: 54px;
 }
+
+@media screen and (max-width: 1024px) {
+  .alice-carousel{
+    width: 515px;
+  }
+}
+
+@media screen and (max-width: 1440px) {
+  .alice-carousel{
+    
+  }
+}
+

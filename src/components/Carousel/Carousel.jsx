@@ -12,7 +12,12 @@ export default function Carousel() {
   const responsive = {
     0: { items: 1 },
     568: { items: 2 },
-    1024: { items: 4 },
+    1024: { items: 2 },
+    1440: { 
+      items: 4,
+      itemsFit: 'contain',
+     },
+
   };
 
   const items = [
@@ -91,7 +96,6 @@ export default function Carousel() {
         autoPlayInterval={4000}
         controlsStrategy="alternate"
         animationDuration={2000}
-        autoHeight={true}
       />
     </>
   );
