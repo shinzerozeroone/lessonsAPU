@@ -9,8 +9,59 @@
   background-color: #125a86;
 }
 
-.toHome {
-  margin-left: 45px;
+.sidebar-btn {
+  position: relative;
+  top: 0;
+  margin-left: 40px;
+  background-color: #125a86;
+  height: 150px;
+  width: 60px;
+  cursor: pointer;
+  border-radius: 0px;
+}
+
+.sidebar-btn:hover {
+  background-color: #ff9614;
+}
+
+.expanded-menu {
+  width: 200px;
+  background-color: #125a86;
+  position: absolute;
+  top: 0;
+  margin-left: 60px;
+  height: 1145px;
+  transform: translateX(-150%);
+  animation: ani 1s forwards;
+  z-index: 2;
+}
+
+.expanded-menu a div {
+  height: 150px;
+  border: 1px solid transparent;
+}
+
+.expanded-menu a div p {
+  margin-top: 60px;
+  text-align: center;
+}
+
+.expanded-menu a {
+  display: block;
+  color: white;
+}
+
+.expanded-menu a:hover {
+  background-color: #ff9614;
+}
+
+@keyframes ani {
+  0% {
+    transform: translateX(-150%);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
 
 @media screen and (min-width: 2560px) {
