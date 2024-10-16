@@ -5,7 +5,7 @@
 }
 
 .sidebar-wrapper {
-  height: 100vh;
+  height: 1100px;
   background-color: #125a86;
 }
 
@@ -19,14 +19,14 @@
   }
 }
 
-/* @media screen and (max-width: 1440px){
-  .sidebar-container{
-    height: 190vh;
+@media screen and (min-width: 1440px) {
+  .sidebar-wrapper {
+    height: 1200px;
   }
 }
 
-@media screen and (max-width: 1024px){
-  .sidebar-container{
-    height: 190vh;
+@media screen and (min-width: 1024px) {
+  .sidebar-wrapper {
+    height: 1200px;
   }
-} */
+}
