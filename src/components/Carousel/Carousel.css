@@ -43,7 +43,7 @@
   border-radius: 9px;
   font-size: 17px;
   font-weight: 400;
-  margin-top: 20px;
+  margin-top: 27px;
   margin-left: 47px;
 }
 
@@ -86,14 +86,12 @@
 }
 
 @media screen and (max-width: 1024px) {
-  .alice-carousel{
+  .alice-carousel {
     width: 515px;
   }
 }
 
 @media screen and (max-width: 1440px) {
-  .alice-carousel{
-    
+  .alice-carousel {
   }
 }
-

@@ -7,11 +7,11 @@ export default function Header() {
     <>
       <header className="header-container">
         <div className="header-nav">
-          <a href="">
+          <a href="http://geoportal02/">
             <img src={headerLogo} alt="" />
           </a>
           <div className="nav-list">
-            <a href="" className="site">
+            <a href="http://geoportal02/" className="site">
               Сервисы ГлавАПУ/
             </a>
             <p>Информационный портал ГлавАПУ</p>

@@ -4,7 +4,7 @@ export default function SideMenu() {
   return (
     <>
       <div className="expanded-menu">
-        <a href="">
+        <a href>
           <div>
             <p>Домашняя страница</p>
           </div>
