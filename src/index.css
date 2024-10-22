@@ -12,6 +12,7 @@
   padding: 0 auto;
 }
 
-body{
-  height: 100%;
+body {
+  min-height: 100vh;
+  position: relative;
 }

@@ -1,0 +1,24 @@
+.breadcrumbs {
+  margin-left: 500px;
+}
+
+.breadcrumbs span {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.breadcrumbs .active {
+  color: #ffa739;
+}
+
+@media screen and (min-width: 1440px) {
+  .breadcrumbs {
+    margin-left: 200px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .breadcrumbs {
+    margin-left: 150px;
+  }
+}

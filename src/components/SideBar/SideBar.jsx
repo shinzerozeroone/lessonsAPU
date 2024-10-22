@@ -5,10 +5,9 @@ import qgisLect from "../../assets/qgisLections.svg";
 import genPresentSide from "../../assets/genPresentSide.svg";
 import photoFixSide from "../../assets/photoFixSide.svg";
 
-import SideMenu from "./SideMenu";
+import { Link } from "react-router-dom";
 
 import { useState } from "react";
-import { useRef } from "react";
 
 export default function SideBar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -36,9 +35,44 @@ export default function SideBar() {
           <button className="sidebar-btn" onClick={() => setIsOpen(!isOpen)}>
             <img src={photoFixSide} alt="" />
           </button>
-        </div>
 
-        {isOpen && <SideMenu></SideMenu>}
+          {isOpen && (
+            <>
+              <div className="expanded-menu">
+                <Link to="/">
+                  <div>
+                    <p>Домашняя страница</p>
+                  </div>
+                </Link>
+                <Link to="/work-with-qlr">
+                  {" "}
+                  <div>
+                    <p>Работа с QLR</p>
+                  </div>
+                </Link>
+                <Link to="/LectionsQGIS">
+                  {" "}
+                  <div>
+                    <p>Лекции QGIS</p>
+                  </div>
+                </Link>
+
+                <Link>
+                  {" "}
+                  <div>
+                    <p>Генератор презентаций</p>
+                  </div>
+                </Link>
+
+                <Link>
+                  <div>
+                    <p>Фотофиксация инструкции</p>
+                  </div>
+                </Link>
+              </div>
+            </>
+          )}
+        </div>
       </div>
     </>
   );

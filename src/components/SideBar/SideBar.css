@@ -1,12 +1,12 @@
 .sidebar-container {
   position: absolute;
   left: 0;
-  width: 60px;
 }
 
 .sidebar-wrapper {
-  height: 1100px;
   background-color: #125a86;
+  width: 60px;
+  height: 100vh;
 }
 
 .sidebar-btn {
@@ -33,7 +33,7 @@
   height: 1145px;
   transform: translateX(-150%);
   animation: ani 1s forwards;
-  z-index: 2;
+  z-index: 1;
 }
 
 .expanded-menu a div {
@@ -46,12 +46,12 @@
   text-align: center;
 }
 
-.expanded-menu a {
-  display: block;
+.expanded-menu div {
   color: white;
 }
 
-.expanded-menu a:hover {
+.expanded-menu div:hover {
+  cursor: pointer;
   background-color: #ff9614;
 }
 
@@ -64,20 +64,20 @@
   }
 }
 
-@media screen and (min-width: 2560px) {
-  .sidebar-wrapper {
-    height: 90vh;
-  }
-}
-
-@media screen and (min-width: 1440px) {
-  .sidebar-wrapper {
-    height: 1200px;
-  }
-}
-
 @media screen and (min-width: 1024px) {
-  .sidebar-wrapper {
-    height: 1200px;
+  .sidebar-container {
+    height: 1500px;
+  }
+}
+
+@media screen and (min-width: 2560px) {
+  .sidebar-container {
+    height: 100vh;
+  }
+}
+
+@media screen and (max-width: 1440px) {
+  .sidebar-container {
+    height: 1100px;
   }
 }

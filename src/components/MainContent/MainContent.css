@@ -34,3 +34,9 @@ main {
   width: 175px;
   height: 50px;
 }
+
+@media screen and (min-width: 1024px) {
+  .catalog-title {
+    margin-left: 200px;
+  }
+}

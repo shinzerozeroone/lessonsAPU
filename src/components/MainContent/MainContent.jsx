@@ -1,13 +1,8 @@
-import AliceCarousel from "react-alice-carousel";
 import "react-alice-carousel/lib/alice-carousel.css";
-
-import qlrImage from "../../assets/qlr.svg";
-import qgisImage from "../../assets/qgis.svg";
-import genPresent from "../../assets/genPresent.svg";
-import photoFix from "../../assets/photoFix.svg";
 import "./MainContent.css";
 
 import Carousel from "../Carousel/Carousel";
+import { Link } from "react-router-dom";
 
 export default function MainContent() {
   return (
@@ -28,7 +23,7 @@ export default function MainContent() {
 
         <div className="catalog-container">
           <p className="catalog-title">Каталог лекций</p>
-          <a href="">Смотреть все</a>
+          <Link to="/all">Смотреть все</Link>
           <br />
           <Carousel></Carousel>
         </div>

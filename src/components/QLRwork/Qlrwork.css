@@ -1,0 +1,64 @@
+.qlr-container {
+  width: 80%;
+  height: 900px;
+  margin-left: 400px;
+  border: 1px solid transparent;
+}
+
+.qlr-header {
+  margin-left: 20px;
+  margin-top: 20px;
+  float: left;
+  width: 90%;
+}
+
+.qlr-header-image {
+  float: left;
+  width: 216px;
+  background-color: #125a86;
+}
+
+.qlr-image {
+  position: relative;
+  top: 20px;
+  right: -55px;
+}
+
+.qlr-header-description {
+  margin-left: 20%;
+}
+
+.qlr-header-description h3 {
+  font-size: 24px;
+}
+
+.qlr-header-description ul {
+  margin-top: 10px;
+  font-size: 15px;
+  padding: 0;
+  margin-left: 20px;
+}
+
+.qlr-content {
+  margin-top: 300px;
+  margin-bottom: 20px;
+  margin-left: 9%;
+  width: 70%;
+  border: 1px solid red;
+  height: 500px;
+}
+
+@media screen and (max-width: 1440px) {
+  .qlr-container {
+    margin-left: 200px;
+  }
+
+  .qlr-header-description {
+    width: 90%;
+    margin-left: 300px;
+  }
+
+  .qlr-content {
+    width: 80%;
+  }
+}
