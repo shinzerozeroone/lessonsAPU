@@ -35,7 +35,7 @@ main {
   height: 50px;
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (max-width: 1024px) {
   .catalog-title {
     margin-left: 200px;
   }

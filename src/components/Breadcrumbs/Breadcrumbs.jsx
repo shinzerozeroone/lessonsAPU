@@ -5,6 +5,7 @@ import { Link, useLocation } from "react-router-dom";
 export default function Breadcrumb() {
   const location = useLocation();
 
+  console.log(location);
   return (
     <div className="breadcrumbs">
       <ul>
@@ -34,6 +35,19 @@ export default function Breadcrumb() {
               }`}
             >
               Лекции QGIS
+            </Link>
+          </>
+        )}
+        {location.pathname.includes(`/LectionsQGIS/`) && (
+          <>
+            <span>➤</span>
+            <Link
+              to={"LectionsQGIS/Entering"}
+              className={`${
+                location.pathname === "/LectionsQGIS/" ? "active" : ""
+              }`}
+            >
+              QGISLectionPages
             </Link>
           </>
         )}

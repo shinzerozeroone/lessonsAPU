@@ -4,6 +4,12 @@ import "./MainContent.css";
 import Carousel from "../Carousel/Carousel";
 import { Link } from "react-router-dom";
 
+const windowInnerWidth = window.innerWidth;
+const windowInnerHeight = window.innerHeight;
+
+console.log(`Ширина - ${windowInnerWidth} `);
+console.log(`Высота - ${windowInnerHeight} `);
+
 export default function MainContent() {
   return (
     <>

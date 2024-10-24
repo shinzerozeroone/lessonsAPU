@@ -1,8 +1,11 @@
 .qlr-container {
-  width: 80%;
+  width: 70%;
   height: 900px;
   margin-left: 400px;
   border: 1px solid transparent;
+  margin-top: 50px;
+  box-shadow: 4px 4px 10px 0px rgba(34, 60, 80, 0.2);
+  border-radius: 10px;
 }
 
 .qlr-header {
@@ -42,10 +45,14 @@
 .qlr-content {
   margin-top: 300px;
   margin-bottom: 20px;
-  margin-left: 9%;
+  margin-left: 15%;
   width: 70%;
-  border: 1px solid red;
   height: 500px;
+}
+
+.qlr-content video {
+  width: 1250px;
+  height: inherit;
 }
 
 @media screen and (max-width: 1440px) {

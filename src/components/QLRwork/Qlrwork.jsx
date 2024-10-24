@@ -4,9 +4,6 @@ import Footer from "../Footer/Footer";
 import Breadcrumbs from "../Breadcrumbs/Breadcrumbs";
 
 import qlrImage from "../../assets/qlr.svg";
-import qgisImage from "../../assets/qgis.svg";
-import genPresent from "../../assets/genPresent.svg";
-import photoFix from "../../assets/photoFix.svg";
 
 import "./Qlrwork.css";
 
@@ -32,7 +29,11 @@ export default function QlrWork() {
           </div>
         </div>
 
-        <div className="qlr-content"></div>
+        <div className="qlr-content">
+          <video controls>
+            <source src="http://geoportal02/videos/qlr.mp4" type="video/mp4" />
+          </video>
+        </div>
       </div>
 
       <Footer></Footer>

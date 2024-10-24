@@ -1,0 +1,87 @@
+.lections-container {
+  width: 70%;
+  height: 900px;
+  margin-left: 400px;
+  border: 1px solid transparent;
+  margin-top: 50px;
+  box-shadow: 4px 4px 10px 0px rgba(34, 60, 80, 0.2);
+  border-radius: 10px;
+}
+
+.lections-header {
+  margin-left: 20px;
+  margin-top: 20px;
+  float: left;
+  width: 90%;
+}
+
+.qgis-header-image {
+  float: left;
+  width: 216px;
+  background-color: #125a86;
+}
+
+.qgis-image {
+  position: relative;
+  top: 20px;
+  right: -10px;
+}
+
+.lections-header h3 {
+  margin-left: 300px;
+  font-size: 24px;
+}
+
+.lections-content {
+  margin-top: 220px;
+  overflow-y: auto;
+  height: 75%;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  scrollbar-color: #ffb04d #e0e0e0;
+  scrollbar-width: none;
+}
+
+.lections-item {
+  width: 500px;
+  height: 269px;
+  background-image: url(../../assets/backgroundQGIS.svg);
+  margin-bottom: 20px;
+  border-radius: 25px;
+  box-shadow: 5px 5px 5px -5px rgba(34, 60, 80, 0.6);
+}
+
+.lections-item-desc {
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  height: 57px;
+  background: linear-gradient(
+    45deg,
+    rgba(18, 90, 134, 1) 0%,
+    rgba(64, 148, 183, 1) 100%
+  );
+  position: relative;
+  top: 212px;
+  color: white;
+  font-size: 20px;
+}
+
+.lections-item-num {
+  display: inline-block;
+  width: 62px;
+  font-weight: 700;
+  height: 57px;
+  font-size: 36px;
+  text-align: center;
+  background-color: #ffb04d;
+  border-bottom-left-radius: 20px;
+}
+
+.lections-item-name {
+  display: inline-block;
+  width: 160px;
+  text-align: center;
+  position: relative;
+  top: -4px;
+}
