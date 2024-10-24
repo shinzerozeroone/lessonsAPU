@@ -38,16 +38,16 @@ export default function Breadcrumb() {
             </Link>
           </>
         )}
-        {location.pathname.includes(`/LectionsQGIS/`) && (
+        {location.pathname.startsWith("/LectionsQGIS/") && (
           <>
             <span>➤</span>
             <Link
-              to={"LectionsQGIS/Entering"}
+              to="/LectionsQGIS/Entering"
               className={`${
-                location.pathname === "/LectionsQGIS/" ? "active" : ""
+                location.pathname.includes("/LectionsQGIS/") ? "active" : ""
               }`}
             >
-              QGISLectionPages
+              Страницы лекций QGIS
             </Link>
           </>
         )}

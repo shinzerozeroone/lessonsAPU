@@ -6,6 +6,7 @@ import Breadcrumbs from "../Breadcrumbs/Breadcrumbs";
 import qgisImage from "../../assets/qgis.svg";
 
 import { Link } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 
 import "./Lections.css";
 
@@ -150,7 +151,10 @@ export default function Lections() {
           </Link>
         </div>
       </div>
+
       <Footer></Footer>
+
+      <Outlet></Outlet>
     </>
   );
 }
