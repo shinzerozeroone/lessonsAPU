@@ -6,11 +6,19 @@ import Breadcrumbs from "../Breadcrumbs/Breadcrumbs";
 import qgisImage from "../../assets/qgis.svg";
 
 import { Link } from "react-router-dom";
-import { Outlet } from "react-router-dom";
 
 import "./Lections.css";
 
 export default function Lections() {
+  const lessons = [
+    {
+      id: 0,
+    },
+    {
+      id: 1,
+    },
+  ];
+
   return (
     <>
       <Header></Header>
@@ -24,7 +32,7 @@ export default function Lections() {
           <h3>Лекции по QGIS</h3>
         </div>
         <div className="lections-content">
-          <Link to="/LectionsQGIS/Entering">
+          <Link to={`/LectionsQGIS/0`}>
             <div className="lections-item">
               <div className="lections-item-desc">
                 <p className="lections-item-num">0</p>
@@ -32,8 +40,7 @@ export default function Lections() {
               </div>
             </div>
           </Link>
-
-          <Link>
+          <Link to={`/LectionsQGIS/1`}>
             <div className="lections-item">
               <div className="lections-item-desc">
                 <p className="lections-item-num">1</p>
@@ -151,10 +158,7 @@ export default function Lections() {
           </Link>
         </div>
       </div>
-
       <Footer></Footer>
-
-      <Outlet></Outlet>
     </>
   );
 }

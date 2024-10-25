@@ -3,7 +3,14 @@ import { createRoot } from "react-dom/client";
 import App from "./App.jsx";
 import "./index.css";
 
-import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
+import {
+  BrowserRouter,
+  Link,
+  Route,
+  Routes,
+  createBrowserRouter,
+  createRoutesFromElements,
+} from "react-router-dom";
 import Breadcrumbs from "./components/Breadcrumbs/Breadcrumbs.jsx";
 import QlrWork from "./components/QLRwork/Qlrwork.jsx";
 import AllLections from "./components/AllLections/AllLections.jsx";
@@ -17,9 +24,8 @@ createRoot(document.getElementById("root")).render(
         <Route path="/" element={<App />} />
         <Route path="/work-with-qlr" element={<QlrWork />} />
         <Route path="/all" element={<AllLections />}></Route>
-        <Route path="/LectionsQGIS" element={<Lections />}>
-          <Route path=":lection" element={<QGISLectionPages />}></Route>
-        </Route>
+        <Route path="/LectionsQGIS" element={<Lections />}></Route>
+        <Route path="/LectionsQGIS/:id" element={<QGISLectionPages />}></Route>
       </Routes>
     </BrowserRouter>
   </StrictMode>
