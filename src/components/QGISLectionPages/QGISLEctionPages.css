@@ -1,0 +1,35 @@
+.qgis-lesson-container {
+  width: 70%;
+  height: 900px;
+  margin-left: 400px;
+  border: 1px solid transparent;
+  margin-top: 50px;
+  box-shadow: 4px 4px 10px 0px rgba(34, 60, 80, 0.2);
+  border-radius: 10px;
+}
+.qgis-lesson-header {
+  margin-left: 20px;
+  margin-top: 20px;
+  float: left;
+  width: 90%;
+}
+.qgis-lesson-description {
+  margin-left: 20%;
+}
+
+.qgis-lesson-description h3 {
+  font-size: 24px;
+}
+
+.qgis-content {
+  margin-top: 300px;
+  margin-bottom: 20px;
+  margin-left: 15%;
+  width: 70%;
+  height: 500px;
+}
+
+.qgis-content video {
+  width: 1250px;
+  height: inherit;
+}

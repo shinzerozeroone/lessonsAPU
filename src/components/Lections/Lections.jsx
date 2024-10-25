@@ -10,15 +10,6 @@ import { Link } from "react-router-dom";
 import "./Lections.css";
 
 export default function Lections() {
-  const lessons = [
-    {
-      id: 0,
-    },
-    {
-      id: 1,
-    },
-  ];
-
   return (
     <>
       <Header></Header>
