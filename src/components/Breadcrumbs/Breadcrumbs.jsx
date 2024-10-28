@@ -1,11 +1,12 @@
 import "./Breadcrumbs.css";
 
 import { Link, useLocation } from "react-router-dom";
-
-export default function Breadcrumb() {
+import React from "react";
+export default function Breadcrumb({ numberPage }) {
   const location = useLocation();
 
-  console.log(location);
+  console.log(numberPage);
+
   return (
     <div className="breadcrumbs">
       <ul>
@@ -38,7 +39,7 @@ export default function Breadcrumb() {
             </Link>
           </>
         )}
-        {location.pathname.startsWith("/LectionsQGIS/1") && (
+        {/* {location.pathname.startsWith(`/LectionsQGIS/${numberPage}`) && (
           <>
             <span>➤</span>
             <Link
@@ -47,12 +48,29 @@ export default function Breadcrumb() {
                 location.pathname.includes("/LectionsQGIS/") ? "active" : ""
               }`}
             >
-              Хуета
+              Лекция 1
             </Link>
           </>
+        )} */}
+
+        {numberPage?.map(
+          (page) =>
+            location.pathname.startsWith(`/LectionsQGIS/${page.id}`) && (
+              <React.Fragment key={page.id}>
+                <span>➤</span>
+                <Link
+                  to={`/LectionsQGIS/${page.id}`}
+                  className={`${
+                    location.pathname.includes("/LectionsQGIS/") ? "active" : ""
+                  }`}
+                >
+                  {page.name}
+                </Link>
+              </React.Fragment>
+            )
         )}
 
-        {location.pathname.startsWith("/LectionsQGIS/0") && (
+        {/* {location.pathname.startsWith("/LectionsQGIS/0") && (
           <>
             <span>➤</span>
             <Link
@@ -61,10 +79,10 @@ export default function Breadcrumb() {
                 location.pathname.includes("/LectionsQGIS/") ? "active" : ""
               }`}
             >
-              пиздец
+              Вводная лекция
             </Link>
           </>
-        )}
+        )} */}
       </ul>
     </div>
   );

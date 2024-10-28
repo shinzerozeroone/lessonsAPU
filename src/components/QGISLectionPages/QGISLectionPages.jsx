@@ -9,9 +9,15 @@ import SideBar from "../SideBar/SideBar";
 import qlrImage from "../../assets/qlr.svg";
 
 import "./QGISLectionPages.css";
+import { useState } from "react";
 
-export default function QGISLectionPages() {
-  let { id } = useParams();
+export default function QGISLectionPages({ id, numberPage }) {
+  const [count, setCount] = useState(id);
+
+  console.log(id);
+
+  console.log(`id сейчас и его тип - ${id} \n ${typeof id}`);
+  console.log(`счет id сейчас = ${count} \n его тип - ${typeof count}`);
 
   let content;
 
@@ -22,14 +28,16 @@ export default function QGISLectionPages() {
     case 1:
       content = "http://geoportal02/videos/lessons/2.mp4";
       break;
-  }
 
-  console.log(id);
+    case 2:
+      content = "ZHOPA";
+      break;
+  }
 
   return (
     <>
       <Header />
-      <Breadcrumbs />
+      <Breadcrumbs numberPage={numberPage} />
       <SideBar />
 
       <div className="qgis-lesson-container">
@@ -46,6 +54,8 @@ export default function QGISLectionPages() {
           <video controls>
             <source src={content} type="video/mp4" />
           </video>
+
+          <button onClick={() => setCount(count + 1)}>forward</button>
         </div>
       </div>
       <Footer />
