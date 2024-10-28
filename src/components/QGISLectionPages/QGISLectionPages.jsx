@@ -1,23 +1,20 @@
 import { Link } from "react-router-dom";
-import { useParams } from "react-router-dom";
 
 import Breadcrumbs from "../Breadcrumbs/Breadcrumbs";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import SideBar from "../SideBar/SideBar";
+import left from "../../assets/left.svg";
+import right from "../../assets/right.svg";
 
 import qlrImage from "../../assets/qlr.svg";
 
 import "./QGISLectionPages.css";
-import { useState } from "react";
+import { useEffect, useState, useRef } from "react";
 
 export default function QGISLectionPages({ id, numberPage }) {
-  const [count, setCount] = useState(id);
-
-  console.log(id);
-
+  const videoRef = useRef(null);
   console.log(`id сейчас и его тип - ${id} \n ${typeof id}`);
-  console.log(`счет id сейчас = ${count} \n его тип - ${typeof count}`);
 
   let content;
 
@@ -28,11 +25,13 @@ export default function QGISLectionPages({ id, numberPage }) {
     case 1:
       content = "http://geoportal02/videos/lessons/2.mp4";
       break;
-
-    case 2:
-      content = "ZHOPA";
-      break;
   }
+
+  useEffect(() => {
+    if (videoRef.current && content) {
+      videoRef.current.load();
+    }
+  }, [content]);
 
   return (
     <>
@@ -51,11 +50,33 @@ export default function QGISLectionPages({ id, numberPage }) {
         </div>
 
         <div className="qgis-content">
-          <video controls>
+          <video ref={videoRef} controls>
             <source src={content} type="video/mp4" />
           </video>
-
-          <button onClick={() => setCount(count + 1)}>forward</button>
+          <div className="qgis-menu">
+            {id == 0 ? (
+              <Link to={`/LectionsQGIS/${id + 1}`}>
+                <button className="frwdBtn">
+                  Вперед
+                  <img src={right}></img>
+                </button>
+              </Link>
+            ) : (
+              <>
+                <Link to={`/LectionsQGIS/${id - 1}`}>
+                  <button className="prvBtn">
+                    <img src={left}></img> Назад
+                  </button>
+                </Link>{" "}
+                <Link to={`/LectionsQGIS/${id + 1}`}>
+                  <button className="frwdBtn">
+                    Вперед
+                    <img src={right}></img>
+                  </button>
+                </Link>{" "}
+              </>
+            )}
+          </div>
         </div>
       </div>
       <Footer />

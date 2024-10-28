@@ -39,23 +39,10 @@ export default function Breadcrumb({ numberPage }) {
             </Link>
           </>
         )}
-        {/* {location.pathname.startsWith(`/LectionsQGIS/${numberPage}`) && (
-          <>
-            <span>➤</span>
-            <Link
-              to="/LectionsQGIS"
-              className={`${
-                location.pathname.includes("/LectionsQGIS/") ? "active" : ""
-              }`}
-            >
-              Лекция 1
-            </Link>
-          </>
-        )} */}
 
         {numberPage?.map(
           (page) =>
-            location.pathname.startsWith(`/LectionsQGIS/${page.id}`) && (
+            location.pathname.includes(`/LectionsQGIS/${page.id}`) && (
               <React.Fragment key={page.id}>
                 <span>➤</span>
                 <Link
@@ -69,20 +56,6 @@ export default function Breadcrumb({ numberPage }) {
               </React.Fragment>
             )
         )}
-
-        {/* {location.pathname.startsWith("/LectionsQGIS/0") && (
-          <>
-            <span>➤</span>
-            <Link
-              to="/LectionsQGIS"
-              className={`${
-                location.pathname.includes("/LectionsQGIS/") ? "active" : ""
-              }`}
-            >
-              Вводная лекция
-            </Link>
-          </>
-        )} */}
       </ul>
     </div>
   );

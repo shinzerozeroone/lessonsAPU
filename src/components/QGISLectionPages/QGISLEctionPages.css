@@ -33,3 +33,27 @@
   width: 1250px;
   height: inherit;
 }
+
+.qgis-menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  border: 1px solid transparent;
+}
+
+.frwdBtn,
+.prvBtn {
+  background-color: transparent;
+  color: #ffb04d;
+  font-size: 20px;
+  margin-top: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.frwdBtn img,
+.prvBtn img {
+  margin: 0 10px;
+}

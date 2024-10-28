@@ -11,6 +11,7 @@ import "./Lections.css";
 
 export default function Lections({ numberPage }) {
   console.log(numberPage);
+
   return (
     <>
       <Header></Header>

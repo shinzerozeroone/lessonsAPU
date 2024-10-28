@@ -22,6 +22,7 @@ const numberPage = [
   { id: 0, name: "Вводная лекция" },
   { id: 1, name: "Лекция 1" },
   { id: 2, name: "Лекция 2" },
+  { id: 3, name: "Лекция 3" },
 ];
 
 createRoot(document.getElementById("root")).render(
