@@ -13,18 +13,17 @@ export default function Carousel() {
     0: { items: 1 },
     568: { items: 2 },
     1024: { items: 2 },
-    1440: { 
+    1440: {
       items: 4,
-      itemsFit: 'contain',
-     },
-
+      itemsFit: "contain",
+    },
   };
 
   const items = [
     <>
       <div className="carousel-item item1">
         <div className="carousel-image">
-          <img className="qlr" src={qlrImage} alt="Работа с QLR" />
+          <img className="qlr carousel-img" src={qlrImage} alt="Работа с QLR" />
         </div>
         <p>Работа с QLR</p>
         <ul>
@@ -38,7 +37,11 @@ export default function Carousel() {
     <>
       <div className="carousel-item item2">
         <div className="carousel-image">
-          <img className="qgis" src={qgisImage} alt="Лекции QGIS" />
+          <img
+            className="qgis carousel-img"
+            src={qgisImage}
+            alt="Лекции QGIS"
+          />
         </div>
         <p>Лекции QGIS</p>
         <ul>
@@ -54,7 +57,7 @@ export default function Carousel() {
       <div className="carousel-item item3">
         <div className="carousel-image">
           <img
-            className="genPresent"
+            className="genPresent carousel-img"
             src={genPresent}
             alt="Генератор презентаций"
           />
@@ -72,7 +75,7 @@ export default function Carousel() {
       <div className="carousel-item item4">
         <div className="carousel-image">
           <img
-            className="photoFix"
+            className="photoFix carousel-img"
             src={photoFix}
             alt="Инструкции Фотофиксации"
           />

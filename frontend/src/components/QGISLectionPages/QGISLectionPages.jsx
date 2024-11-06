@@ -11,6 +11,7 @@ import qlrImage from "../../assets/qlr.svg";
 
 import "./QGISLectionPages.css";
 import { useEffect, useState, useRef } from "react";
+import Comments from "../Comments/Commnets";
 
 export default function QGISLectionPages({ id, numberPage }) {
   const videoRef = useRef(null);
@@ -24,6 +25,9 @@ export default function QGISLectionPages({ id, numberPage }) {
       break;
     case 1:
       content = "http://geoportal02/videos/lessons/2.mp4";
+      break;
+    case 2:
+      content = "http://geoportal02/videos/lessons/3.mp4";
       break;
   }
 
@@ -79,6 +83,8 @@ export default function QGISLectionPages({ id, numberPage }) {
           </div>
         </div>
       </div>
+      <Comments lectureId={id} />
+
       <Footer />
     </>
   );

@@ -17,19 +17,27 @@ import QlrWork from "./components/QLRwork/Qlrwork.jsx";
 import AllLections from "./components/AllLections/AllLections.jsx";
 import Lections from "./components/Lections/Lections.jsx";
 import QGISLectionPages from "./components/QGISLectionPages/QGISLectionPages.jsx";
+import LogRegModal from "./components/LogRegModal/LogRegModal.jsx";
 
 const numberPage = [
   { id: 0, name: "Вводная лекция" },
   { id: 1, name: "Лекция 1" },
   { id: 2, name: "Лекция 2" },
-  { id: 3, name: "Лекция 3" },
+  { id: 3, name: "Лекция 4" },
+  { id: 4, name: "Лекция 5" },
+  { id: 5, name: "Лекция 6" },
+  { id: 6, name: "Лекция 7" },
+  { id: 7, name: "Лекция 8" },
+  { id: 8, name: "Лекция 9" },
 ];
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <BrowserRouter basename="/KnowledgeBase">
       <Routes>
-        <Route path="/" element={<App />} />
+        <Route path="/" element={<App />}>
+          <Route path="/registration" element={<LogRegModal />}></Route>
+        </Route>
         <Route path="/work-with-qlr" element={<QlrWork />} />
         <Route path="/all" element={<AllLections />}></Route>
         <Route

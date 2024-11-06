@@ -1,8 +1,24 @@
 import "./Header.css";
 import headerLogo from "../../assets/Group.svg";
 import searchBtn from "../../assets/search.svg";
+import accImg from "../../assets/user.png";
+
+import { Link } from "react-router-dom";
+
+import LogRegModal from "../LogRegModal/LogRegModal";
+import { useState } from "react";
 
 export default function Header() {
+  const [open, setIsOpen] = useState(false);
+
+  const handleModalOpen = () => {
+    setIsOpen(true);
+  };
+
+  const handleModalClose = () => {
+    setIsOpen(false);
+  };
+
   return (
     <>
       <header className="header-container">
@@ -18,6 +34,14 @@ export default function Header() {
           </div>
           <br />
           <p className="sheetName">Информационный портал ГлавАПУ</p>
+
+          {/* <Link to="/registration">
+            <button className="accBtn" onClick={handleModalOpen}>
+              <img src={accImg} alt="" className="accImage" />
+            </button>
+          </Link>
+
+          {open && <LogRegModal></LogRegModal>} */}
 
           <form role="search">
             <input type="text" placeholder="Поиск..." />

@@ -52,6 +52,8 @@
   width: 245px;
   height: 173px;
   background-color: #125a86;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
 }
 
 .qlr {
