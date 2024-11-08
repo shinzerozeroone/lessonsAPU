@@ -23,7 +23,23 @@ app.get("/comments/:lectureId", async (req, res) => {
       "SELECT * FROM comments WHERE lecture_id = $1 ORDER BY created_at DESC",
       [lectureId]
     );
-    res.json(result.rows);
+
+    const comments = result.rows;
+    const commentsMap = {};
+
+    comments.forEach((comment) => {
+      commentsMap[comment.id] = { ...comment, replies: [] };
+    });
+
+    comments.forEach((comment) => {
+      if (comment.parent_id) {
+        commentsMap[comment.parent_id].replies.push(commentsMap[comment.id]);
+      }
+    });
+
+    const rootComments = comments.filter((comment) => !comment.parent_id);
+
+    res.json(rootComments);
   } catch (err) {
     console.error(err);
     res.status(500).send("Server error");
