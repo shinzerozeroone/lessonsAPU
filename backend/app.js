@@ -4,59 +4,66 @@ const bodyParser = require("body-parser");
 
 const { Pool } = require("pg");
 
+// const pool = new Pool({
+//   user: "leushin_aa",
+//   host: "glavdb",
+//   database: "InfoComments",
+//   password: "3fshGmpyWD",
+//   port: "5432",
+// });
+
 const pool = new Pool({
-  user: "leushin_aa",
-  host: "glavdb",
-  database: "InfoComments",
-  password: "3fshGmpyWD",
-  port: "5432",
-});
+    user: "postgres",
+    host: "localhost",
+    database: "glavdb",
+    password: "12345",
+    port: "5432",
+  });
 
 const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 
-app.get("/comments/:lectureId", async (req, res) => {
-  const { lectureId } = req.params;
+app.get('/comments/:lectureId', async (req, res) => {
+  const lectureId = req.params.lectureId;
+
   try {
-    const result = await pool.query(
-      "SELECT * FROM comments WHERE lecture_id = $1 ORDER BY created_at DESC",
-      [lectureId]
-    );
+    const { rows: comments } = await pool.query('SELECT * FROM comments WHERE lecture_id = $1 ORDER BY id', [lectureId]);
 
-    const comments = result.rows;
-    const commentsMap = {};
-
-    comments.forEach((comment) => {
-      commentsMap[comment.id] = { ...comment, replies: [] };
-    });
-
-    comments.forEach((comment) => {
-      if (comment.parent_id) {
-        commentsMap[comment.parent_id].replies.push(commentsMap[comment.id]);
+    const groupedComments = comments.reduce((acc, comment) => {
+      if (!comment.parent_id) {
+        acc.push({ ...comment, replies: [] }); 
+      } else {
+        const parentComment = acc.find(c => c.id === comment.parent_id);
+        if (parentComment) {
+          parentComment.replies.push(comment); 
+        }
       }
-    });
+      return acc;
+    }, []);
 
-    const rootComments = comments.filter((comment) => !comment.parent_id);
-
-    res.json(rootComments);
-  } catch (err) {
-    console.error(err);
-    res.status(500).send("Server error");
+    res.status(200).json(groupedComments);
+  } catch (error) {
+    console.error('Ошибка при получении комментариев:', error);
+    res.status(500).json({ error: 'Ошибка при получении комментариев' });
   }
 });
 
-app.post("/comments", async (req, res) => {
-  const { text, lectureId } = req.body;
+
+app.post('/comment/:lectureId', async (req, res) => {
+  const lectureId = req.params.lectureId;
+  const { text, parent_id } = req.body; 
+
+  if (!text) {
+    return res.status(400).json({ error: 'Текст комментария не может быть пустым' });
+  }
+
   try {
-    const result = await pool.query(
-      "INSERT INTO comments (text, lecture_id) VALUES ($1, $2) RETURNING *",
-      [text, lectureId]
-    );
-    res.json(result.rows[0]);
-  } catch (err) {
-    console.error(err);
-    res.status(500).send("Server error");
+    await pool.query('INSERT INTO comments (lecture_id, text, parent_id) VALUES ($1, $2, $3)', [lectureId, text, parent_id || null]);
+    res.status(201).json({ message: 'Комментарий успешно добавлен' });
+  } catch (error) {
+    console.error('Ошибка при добавлении комментария:', error);
+    res.status(500).json({ error: 'Ошибка при добавлении комментария' });
   }
 });
 
