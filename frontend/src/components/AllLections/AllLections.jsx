@@ -53,7 +53,7 @@ export default function AllLections() {
               </div>
             </Link>
 
-            <Link>
+            <Link to="/GenPresentations">
               {" "}
               <div className="carousel-item item3 all">
                 <div className="carousel-image">

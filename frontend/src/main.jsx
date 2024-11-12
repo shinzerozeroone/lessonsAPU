@@ -17,7 +17,8 @@ import QlrWork from "./components/QLRwork/Qlrwork.jsx";
 import AllLections from "./components/AllLections/AllLections.jsx";
 import Lections from "./components/Lections/Lections.jsx";
 import QGISLectionPages from "./components/QGISLectionPages/QGISLectionPages.jsx";
-import LogRegModal from "./components/LogRegModal/LogRegModal.jsx";
+import GenPresentaion from "./components/GenPresentation/GenPresentation.jsx";
+import MainInteface from "./components/GenPresentsLessons/MainInterface.jsx";
 
 const numberPage = [
   { id: 0, name: "Вводная лекция" },
@@ -35,9 +36,7 @@ createRoot(document.getElementById("root")).render(
   <StrictMode>
     <BrowserRouter basename="/KnowledgeBase">
       <Routes>
-        <Route path="/" element={<App />}>
-          <Route path="/registration" element={<LogRegModal />}></Route>
-        </Route>
+        <Route path="/" element={<App />}></Route>
         <Route path="/work-with-qlr" element={<QlrWork />} />
         <Route path="/all" element={<AllLections />}></Route>
         <Route
@@ -51,6 +50,12 @@ createRoot(document.getElementById("root")).render(
             element={<QGISLectionPages id={page.id} numberPage={numberPage} />}
           ></Route>
         ))}
+
+        <Route path="/GenPresentations" element={<GenPresentaion />}></Route>
+        <Route
+          path="/GenPresentations/MainInterface"
+          element={<MainInteface />}
+        ></Route>
       </Routes>
     </BrowserRouter>
   </StrictMode>

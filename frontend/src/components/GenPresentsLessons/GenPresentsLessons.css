@@ -1,0 +1,45 @@
+.gen-lessons-container {
+  width: 70%;
+  margin-left: 400px;
+  border: 1px solid transparent;
+  margin-top: 50px;
+  box-shadow: 4px 4px 10px 0px rgba(95, 102, 107, 0.2);
+  border-radius: 10px;
+  border: 1px springgreen solid;
+}
+
+.gen-lessons-header {
+  margin-left: 20px;
+  margin-top: 20px;
+  float: left;
+  width: 90%;
+}
+
+.gen-lessons-header-image {
+  margin: 0;
+  margin-left: 400px;
+  width: 246px;
+  height: 150px;
+  background-color: rgba(138, 131, 131, 0.11);
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+.gen-lessons-image {
+  position: relative;
+  top: 25px;
+  right: -20px;
+  width: 200px;
+}
+
+.gen-lessons-header-description {
+}
+
+.gen-lessons-header-image h3 {
+  font-size: 24px;
+  margin-bottom: 15px;
+  width: 310px;
+  position: relative;
+  top: -150px;
+  left: 300px;
+}

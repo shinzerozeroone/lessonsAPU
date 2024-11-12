@@ -2,10 +2,10 @@ import "./Breadcrumbs.css";
 
 import { Link, useLocation } from "react-router-dom";
 import React from "react";
-export default function Breadcrumb({ numberPage }) {
+export default function Breadcrumb({ numberPage, Instrs }) {
   const location = useLocation();
 
-  console.log(numberPage);
+  console.log(Instrs);
 
   return (
     <div className="breadcrumbs">
@@ -26,6 +26,37 @@ export default function Breadcrumb({ numberPage }) {
             </Link>
           </>
         )}
+
+        {location.pathname.includes(`/GenPresentations`) && (
+          <>
+            <span>➤</span>
+            <Link
+              to={"/GenPresentations"}
+              className={`${
+                location.pathname === "/GenPresentations" ? "active" : ""
+              }`}
+            >
+              Генератор презентаций
+            </Link>
+          </>
+        )}
+
+        {location.pathname.includes(`/GenPresentations/MainInterface`) && (
+          <>
+            <span>➤</span>
+            <Link
+              to={"/GenPresentations"}
+              className={`${
+                location.pathname === "/GenPresentations/MainInterface"
+                  ? "active"
+                  : ""
+              }`}
+            >
+              Основной Экран
+            </Link>
+          </>
+        )}
+
         {location.pathname.includes("/LectionsQGIS") && (
           <>
             <span>➤</span>
