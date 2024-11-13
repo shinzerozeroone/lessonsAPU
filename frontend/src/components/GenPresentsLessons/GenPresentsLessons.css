@@ -170,125 +170,23 @@
   height: 600px;
 }
 
-.first-button-mainTab {
-  left: -250px;
-  top: 130px;
-}
-
-.second-button-mainTab {
-  left: 210px;
-  top: 130px;
-}
-
-.third-button-mainTab {
-  left: -160px;
-  top: 210px;
-}
-
-.fouth-button-mainTab {
-  left: -10px;
-  top: 210px;
-}
-
-.fives-button-mainTab {
-  left: 200px;
-  top: 210px;
-}
-
-.six-button-mainTab {
-  left: 500px;
-  top: 210px;
-}
-
-.sevens-button-mainTab {
-  left: 1000px;
-  top: 210px;
-}
-
-.eights-button-mainTab {
-  top: 275px;
-  left: -250px;
-}
-
-.nines-button-mainTab {
-  top: 275px;
-  left: -180px;
-}
-
-.ten-button-mainTab {
-  top: 275px;
-  left: -50px;
-  padding: 0px;
-}
-
-.eleven-button-mainTab {
-  top: 275px;
-  left: 130px;
-  padding: 0px;
-}
-
-.twelve-button-mainTab {
-  top: 275px;
-  left: 300px;
-  padding: 0px;
-}
-
-.thirteenth-button-mainTab {
-  top: 275px;
-  left: 470px;
-  padding: 0px;
-}
-
-.fourteenth-button-mainTab {
-  top: 275px;
-  left: 640px;
-  padding: 0px;
-}
-
-.fiveteenth-button-mainTab {
-  top: 275px;
-  left: 830px;
-  padding: 0px;
-}
-
-.sixteenth-button-mainTab {
-  top: 275px;
-  left: 1000px;
-  padding: 0px;
-}
-
-.seventeenth-button-mainTab {
-  top: 340px;
-  left: -630px;
-  padding: 0px;
-}
-
-.eighteenth-button-mainTab {
-  top: 520px;
-  left: -160px;
-  padding: 0px;
-}
-
-.nineteenth-button-mainTab {
-  top: 520px;
-  left: 20px;
-  padding: 0px;
-}
-
-.twentieth-button-mainTab {
-  left: 990px;
-  top: 130px;
-  padding: 0px;
-}
-
-.twentyOne-button-mainTab {
-  left: 1050px;
-  top: 90px;
-  padding: 0px;
-}
-
 .mainTab-menu {
   margin-left: 50%;
+  margin-top: 20px;
+  margin-bottom: 50px;
+}
+
+.color-button {
+  color: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 30px;
+  font-size: 19px;
+  cursor: pointer;
+}
+
+.color-button.clicked {
+  background-color: #ffa739;
 }
 
 .mainTab-menu button {
@@ -303,6 +201,10 @@
   width: 100%;
   position: absolute;
   bottom: -700px;
+}
+
+.activeBtn {
+  background-color: #ffa739;
 }
 
 .KASTIL228 {

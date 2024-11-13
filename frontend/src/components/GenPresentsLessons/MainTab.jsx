@@ -15,9 +15,90 @@ import { useState } from "react";
 
 export default function MainTab() {
   const [show, setShow] = useState(false);
+  const [activeButtons, setActiveButtons] = useState([]);
 
   const toggleInstrs = () => {
     setShow((prev) => !prev);
+  };
+
+  const buttons = [
+    { id: 1, label: "1", postion: { left: "-250px", top: "130px" } },
+    { id: 2, label: "2", postion: { left: "210px", top: "130px" } },
+    { id: 3, label: "3", postion: { left: "-160px", top: "210px" } },
+    { id: 4, label: "4", postion: { left: "-10px", top: "210px" } },
+    { id: 5, label: "5", postion: { left: "200px", top: "210px" } },
+    { id: 6, label: "6", postion: { left: "500px", top: "210px" } },
+    { id: 7, label: "7", postion: { left: "1000px", top: "210px" } },
+    { id: 8, label: "8", postion: { left: "-250px", top: "275px" } },
+    { id: 9, label: "9", postion: { left: "-180px", top: "275px" } },
+    {
+      id: 10,
+      label: "10",
+      postion: { left: "-50px", top: "275px", padding: "0px" },
+    },
+    {
+      id: 11,
+      label: "11",
+      postion: { left: "130px", top: "275px", padding: "0px" },
+    },
+    {
+      id: 12,
+      label: "12",
+      postion: { left: "300px", top: "275px", padding: "0px" },
+    },
+    {
+      id: 13,
+      label: "13",
+      postion: { left: "470px", top: "275px", padding: "0px" },
+    },
+    {
+      id: 14,
+      label: "14",
+      postion: { left: "640px", top: "275px", padding: "0px" },
+    },
+    {
+      id: 15,
+      label: "15",
+      postion: { left: "830px", top: "275px", padding: "0px" },
+    },
+    {
+      id: 16,
+      label: "16",
+      postion: { left: "380px", top: "275px", padding: "0px" },
+    },
+    {
+      id: 17,
+      label: "17",
+      postion: { left: "-630px", top: "340px", padding: "0px" },
+    },
+    {
+      id: 18,
+      label: "18",
+      postion: { left: "-160px", top: "520px", padding: "0px" },
+    },
+    {
+      id: 19,
+      label: "19",
+      postion: { left: "20px", top: "520px", padding: "0px" },
+    },
+    {
+      id: 20,
+      label: "20",
+      postion: { left: "290px", top: "130px", padding: "0px" },
+    },
+    {
+      id: 21,
+      label: "21",
+      postion: { left: "250px", top: "90px", padding: "0px" },
+    },
+  ];
+
+  const handleClick = (id) => {
+    setActiveButtons((prev) =>
+      prev.includes(id)
+        ? prev.filter((buttonId) => buttonId !== id)
+        : [...prev, id]
+    );
   };
 
   return (
@@ -25,6 +106,7 @@ export default function MainTab() {
       <Header></Header>
       <SideBar></SideBar>
       <Breadcrumb></Breadcrumb>
+
       <div className="gen-lessons-header">
         <div className="gen-lessons-header-image">
           <img src={Interfaces} alt="" className="gen-lessons-image" />
@@ -41,89 +123,22 @@ export default function MainTab() {
               <img src={finger} alt="" />
             </div>
             <div className="description-back-mainTab">
-              <button className="first-button-mainTab btn-item-interfaces">
-                1
-              </button>
-
-              <button className="second-button-mainTab btn-item-interfaces">
-                2
-              </button>
-
-              <button className="third-button-mainTab btn-item-interfaces">
-                3
-              </button>
-
-              <button className="fouth-button-mainTab btn-item-interfaces">
-                4
-              </button>
-
-              <button className="fives-button-mainTab btn-item-interfaces">
-                5
-              </button>
-
-              <button className="six-button-mainTab btn-item-interfaces">
-                6
-              </button>
-
-              <button className="sevens-button-mainTab btn-item-interfaces">
-                7
-              </button>
-
-              <button className="eights-button-mainTab btn-item-interfaces">
-                8
-              </button>
-
-              <button className="nines-button-mainTab btn-item-interfaces">
-                9
-              </button>
-
-              <button className="ten-button-mainTab btn-item-interfaces">
-                10
-              </button>
-
-              <button className="eleven-button-mainTab btn-item-interfaces">
-                11
-              </button>
-
-              <button className="twelve-button-mainTab btn-item-interfaces">
-                12
-              </button>
-
-              <button className="thirteenth-button-mainTab btn-item-interfaces">
-                13
-              </button>
-
-              <button className="fourteenth-button-mainTab btn-item-interfaces">
-                14
-              </button>
-
-              <button className="fiveteenth-button-mainTab btn-item-interfaces">
-                15
-              </button>
-
-              <button className="sixteenth-button-mainTab btn-item-interfaces">
-                16
-              </button>
-
-              <button className="seventeenth-button-mainTab btn-item-interfaces">
-                17
-              </button>
-
-              <button className="eighteenth-button-mainTab btn-item-interfaces">
-                18
-              </button>
-
-              <button className="nineteenth-button-mainTab btn-item-interfaces">
-                19
-              </button>
-
-              <button className="twentieth-button-mainTab btn-item-interfaces">
-                20
-              </button>
-
-              <button className="twentyOne-button-mainTab btn-item-interfaces">
-                21
-              </button>
+              {buttons.map((btn) => (
+                <button
+                  key={btn.id}
+                  className={`color-button ${
+                    activeButtons.includes(btn.id) ? "clicked" : ""
+                  }`}
+                  style={{
+                    top: btn.postion.top,
+                    left: btn.postion.left,
+                    padding: btn.postion?.padding,
+                  }}
+                  onClick={() => handleClick(btn.id)}
+                >
+                  {btn.label}
+                </button>
+              ))}
 
               <div className="description-lesson-name">
                 <p>2</p>
@@ -145,7 +160,6 @@ export default function MainTab() {
         </Link>
         <div className="KASTIL228"></div>
       </div>
-
       <Footer />
     </>
   );
