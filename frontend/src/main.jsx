@@ -19,6 +19,7 @@ import Lections from "./components/Lections/Lections.jsx";
 import QGISLectionPages from "./components/QGISLectionPages/QGISLectionPages.jsx";
 import GenPresentaion from "./components/GenPresentation/GenPresentation.jsx";
 import MainInteface from "./components/GenPresentsLessons/MainInterface.jsx";
+import MainTab from "./components/GenPresentsLessons/MainTab.jsx";
 
 const numberPage = [
   { id: 0, name: "Вводная лекция" },
@@ -55,6 +56,11 @@ createRoot(document.getElementById("root")).render(
         <Route
           path="/GenPresentations/MainInterface"
           element={<MainInteface />}
+        ></Route>
+
+        <Route
+          path="/GenPresentations/MainInterface/MainTab"
+          element={<MainTab />}
         ></Route>
       </Routes>
     </BrowserRouter>

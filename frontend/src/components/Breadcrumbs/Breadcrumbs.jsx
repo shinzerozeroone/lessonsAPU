@@ -7,6 +7,14 @@ export default function Breadcrumb({ numberPage, Instrs }) {
 
   console.log(Instrs);
 
+  const IntNames = [
+    { name: "Основной экран" },
+    { name: 'Вкладка "Главная"' },
+    { name: 'Вкладка "Главная"' },
+    { name: 'Вкладка "Цвет"' },
+    { name: "Добавление выносок" },
+  ];
+
   return (
     <div className="breadcrumbs">
       <ul>
@@ -53,6 +61,24 @@ export default function Breadcrumb({ numberPage, Instrs }) {
               }`}
             >
               Основной Экран
+            </Link>
+          </>
+        )}
+
+        {location.pathname.includes(
+          "/GenPresentations/MainInterface/MainTab"
+        ) && (
+          <>
+            <span>➤</span>
+            <Link
+              to={"/GenPresentations"}
+              className={`${
+                location.pathname === "/GenPresentations/MainInterface/MainTab"
+                  ? "active"
+                  : ""
+              }`}
+            >
+              Вкладка "Главная"
             </Link>
           </>
         )}
